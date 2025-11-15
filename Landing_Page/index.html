@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoboCalc - Futuristic Calculator</title>
+    <link rel="stylesheet" href="landing.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>🦾 RoboCalc</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#calculator">Try Now</a></li>
+                <li><a href="#download">Download</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2 class="hero-title">Compute the Future</h2>
+            <p class="hero-description">Experience precision engineering with RoboCalc, the ultimate robotic calculator designed for tomorrow's computations. Sleek, smart, and cybernetically enhanced.</p>
+            <a href="#calculator" class="cta-button">Launch Calculator</a>
+        </div>
+        <div class="hero-visual">
+            <div class="circuit-lines"></div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Core Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Lightning Calculations</h3>
+                    <p>Instant arithmetic operations with error-proof logic for seamless performance.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Robotic Interface</h3>
+                    <p>Metallic design with neon glows and scanline animations for an immersive experience.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Secure Processing</h3>
+                    <p>Built-in validation and safe evaluation to prevent computational errors.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Responsive Design</h3>
+                    <p>Works flawlessly on desktops, tablets, and mobiles with adaptive layouts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="calculator" class="calculator-section">
+        <div class="container">
+            <h2 class="section-title">Interactive Demo</h2>
+            <p class="section-subtitle">Try the calculator right here. Click to compute like a machine.</p>
+            <div class="calculator-wrapper">
+                <div class="calculator">
+                    <div class="display">
+                        <input type="text" id="screen" readonly>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn clear" onclick="clearScreen()">C</button>
+                        <button class="btn" onclick="deleteLast()">⌫</button>
+                        <button class="btn operator" onclick="appendToScreen('/')">/</button>
+                        <button class="btn operator" onclick="appendToScreen('*')">×</button>
+                        
+                        <button class="btn number" onclick="appendToScreen('7')">7</button>
+                        <button class="btn number" onclick="appendToScreen('8')">8</button>
+                        <button class="btn number" onclick="appendToScreen('9')">9</button>
+                        <button class="btn operator" onclick="appendToScreen('-')">-</button>
+                        
+                        <button class="btn number" onclick="appendToScreen('4')">4</button>
+                        <button class="btn number" onclick="appendToScreen('5')">5</button>
+                        <button class="btn number" onclick="appendToScreen('6')">6</button>
+                        <button class="btn operator" onclick="appendToScreen('+')">+</button>
+                        
+                        <button class="btn number" onclick="appendToScreen('1')">1</button>
+                        <button class="btn number" onclick="appendToScreen('2')">2</button>
+                        <button class="btn number" onclick="appendToScreen('3')">3</button>
+                        <button class="btn equals" onclick="calculate()" style="grid-row: span 2;">=</button>
+                        
+                        <button class="btn number zero" onclick="appendToScreen('0')" style="grid-row: span 2; grid-column: span 2;">0</button>
+                        <button class="btn number" onclick="appendToScreen('.')">.</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="download">
+        <div class="container">
+            <h2 class="section-title">Get RoboCalc</h2>
+            <p class="section-subtitle">Download the source or deploy to your site. Fully open-source and customizable.</p>
+            <div class="download-buttons">
+                <a href="#" class="download-btn primary">Download ZIP</a>
+                <a href="#" class="download-btn secondary">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 RoboCalc. Built with cybernetic precision.</p>
+        </div>
+    </footer>
+
+    <script src="landing.js"></script>
+</body>
+</html>
