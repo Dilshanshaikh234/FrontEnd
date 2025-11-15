@@ -1,0 +1,177 @@
+/* calculator.css - Robotic Theme */
+body {
+    font-family: 'Courier New', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #0a0a0a, #1a1a2e);
+    background-image: 
+        radial-gradient(circle at 25% 25%, #00ffff 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, #00ff00 0%, transparent 50%);
+    animation: circuitGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes circuitGlow {
+    0% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+.calculator {
+    border: 3px solid #00ffff;
+    border-radius: 15px;
+    padding: 15px;
+    background: linear-gradient(145deg, #2c3e50, #34495e);
+    box-shadow: 
+        0 0 20px #00ffff,
+        inset 0 0 20px rgba(0, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.calculator::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+    animation: scanline 3s linear infinite;
+}
+
+@keyframes scanline {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.display {
+    width: 100%;
+    height: 70px;
+    margin-bottom: 15px;
+    background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+    border: 2px solid #00ffff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 15px;
+    box-sizing: border-box;
+    box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+#screen {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    color: #00ffff;
+    font-size: 28px;
+    text-align: right;
+    outline: none;
+    text-shadow: 0 0 5px #00ffff;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.buttons button[rowspan="2"] {
+    grid-row: span 2;
+}
+
+.zero {
+    grid-column: span 2;
+}
+
+.btn {
+    height: 65px;
+    border: 1px solid #00ffff;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+    background: linear-gradient(145deg, #34495e, #2c3e50);
+    color: #ecf0f1;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover {
+    background: linear-gradient(145deg, #4a6f8a, #3d566e);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.number {
+    background: linear-gradient(145deg, #5d6d7e, #4a5e6d);
+    color: #bdc3c7;
+    border-color: #3498db;
+}
+
+.operator {
+    background: linear-gradient(145deg, #00b894, #00a085);
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 184, 148, 0.5);
+}
+
+.operator:hover {
+    background: linear-gradient(145deg, #00cec9, #00b894);
+    box-shadow: 0 0 20px rgba(0, 206, 201, 0.7);
+}
+
+.equals {
+    background: linear-gradient(145deg, #e74c3c, #c0392b);
+    color: white;
+    border-color: #e74c3c;
+    grid-row: span 2;
+    box-shadow: 0 0 15px rgba(231, 76, 60, 0.5);
+}
+
+.equals:hover {
+    background: linear-gradient(145deg, #ec7063, #e74c3c);
+    box-shadow: 0 0 25px rgba(236, 112, 99, 0.7);
+}
+
+.clear {
+    background: linear-gradient(145deg, #e67e22, #d35400);
+    color: white;
+    border-color: #e67e22;
+    box-shadow: 0 0 10px rgba(230, 126, 34, 0.5);
+}
+
+.clear:hover {
+    background: linear-gradient(145deg, #f39c12, #e67e22);
+    box-shadow: 0 0 20px rgba(243, 156, 18, 0.7);
+}
+
+.btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    animation: pulse 0.1s ease;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 255, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 255, 255, 0); }
+}
